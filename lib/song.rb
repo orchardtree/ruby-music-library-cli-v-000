@@ -61,4 +61,16 @@ class Song
   def self.create_from_filename(file)
     self.new_from_filename(file).save
   end
+<<<<<<< HEAD
 end
+=======
+end
+
+
+
+
+
+
+
+
+>>>>>>> 8d299d721f2ae299d4ed0be3e09ee982259e844e

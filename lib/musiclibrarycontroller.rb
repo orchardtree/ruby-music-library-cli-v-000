@@ -1,5 +1,5 @@
 class MusicLibraryController 
-  attr_accessor = :path
+  attr_accessor :path
   
   def initialize(path = "./db/mp3s")
     @path = path
@@ -26,6 +26,7 @@ class MusicLibraryController
       choice = gets.strip
       i += 1
     end
+<<<<<<< HEAD
     case choice
       when "list songs"
         list_songs
@@ -40,6 +41,9 @@ class MusicLibraryController
       when "play song"
         play_song
     end
+=======
+    choice
+>>>>>>> 8d299d721f2ae299d4ed0be3e09ee982259e844e
   end
   
   def list_songs
@@ -47,6 +51,12 @@ class MusicLibraryController
     songs.each_with_index do |song, index|
       puts "#{index + 1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
     end
+<<<<<<< HEAD
+=======
+    #songs.collect.each_with_index do |song, index|
+    #  "#{index + 1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
+    #end
+>>>>>>> 8d299d721f2ae299d4ed0be3e09ee982259e844e
   end
   
   def list_artists
@@ -54,6 +64,12 @@ class MusicLibraryController
     artists.each_with_index do |artist, index|
       puts "#{index + 1}. #{artist.name}"
     end
+<<<<<<< HEAD
+=======
+    artists.collect.each_with_index do |artist, index|
+      "#{index + 1}. #{artist.name}"
+    end
+>>>>>>> 8d299d721f2ae299d4ed0be3e09ee982259e844e
   end
    
   def list_genres
@@ -61,6 +77,12 @@ class MusicLibraryController
     genres.each_with_index do |genre, index|
       puts "#{index + 1}. #{genre.name}"
     end
+<<<<<<< HEAD
+=======
+    genres.collect.each_with_index do |genre, index|
+      "#{index + 1}. #{genre.name}"
+    end
+>>>>>>> 8d299d721f2ae299d4ed0be3e09ee982259e844e
   end 
   
   def list_songs_by_artist
@@ -86,6 +108,7 @@ class MusicLibraryController
   def play_song
     puts "Which song number would you like to play?"
     song_choice = gets.chomp.to_i - 1
+<<<<<<< HEAD
     songs = Song.all.sort_by {|song| song.name}
     songs.find.each_with_index do |song, index|
       if song_choice == index
@@ -95,5 +118,18 @@ class MusicLibraryController
   end
 end
 
+=======
+  end
+end
+=begin
+    if list_songs != nil && song_num >= 1 && song_num <= list_songs.size
+      selected_song = list_songs.select {|song| song.split(". ")[0].to_i == (song_num + 1)}
+      song_artist = selected_song.first.split(/(\s-\s|\. )/)[2]
+      song_name = selected_song.first.split(/(\s-\s|\. )/)[4]
+      song_genre = selected_song.first.split(/(\s-\s|\. )/)[6]
+      puts "Playing #{song_name} by #{song_artist}"
+    end
+=end
+>>>>>>> 8d299d721f2ae299d4ed0be3e09ee982259e844e
 
 
